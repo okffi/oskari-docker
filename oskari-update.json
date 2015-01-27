@@ -15,7 +15,7 @@
         {
           "type": "file",
           "source": "run.sh",
-          "destination": "/oskari"
+          "destination": "/oskari/run.sh"
         },
         {
             "type": "shell",
