@@ -46,7 +46,7 @@ case "$1" in
 		docker ps | grep "$image"
 		;;
 	start|run)
-		port=80
+		port=2373
 		if [ "$2" != "" ]; then
 		    port=$2
 		fi
