@@ -42,7 +42,7 @@
         {
             "type": "shell",
             "inline": [
-                "sudo chmod +x /oskari/run.sh"
+                "sudo chmod 755 /oskari/run.sh"
             ]
         },
   ],

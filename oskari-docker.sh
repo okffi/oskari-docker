@@ -2,7 +2,7 @@
 
 base="ubuntu:latest"
 image="okffi/oskari"
-oskaricmd="run.sh"
+oskaricmd="./run.sh"
 
 # TODO: add persistent data container for postgres separate from the code container http://stackoverflow.com/questions/18496940/how-to-deal-with-persistent-storage-e-g-databases-in-docker
 
