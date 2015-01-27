@@ -30,7 +30,7 @@
                 "sudo git clone https://github.com/nls-oskari/oskari.git",
                 "sudo mv oskari Oskari",
                 "sudo git clone https://github.com/nls-oskari/oskari-server.git",
-                "cd /oskari/oskari-server/standalone-jetty",
+                "cd /oskari/oskari-server",
                 "sudo mvn clean install"
             ]
         }
