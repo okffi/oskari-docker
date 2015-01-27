@@ -13,15 +13,17 @@
   ],
   "provisioners": [
         {
-          "type": "file",
-          "source": "server",
-          "destination": "/oskari"
-        },
-        {
             "type": "shell",
             "inline": [
-                ""
+                "cd /oskari/oskari-server",
+                "git pull",
+                "mvn clean install"
             ]
+        },
+        {
+          "type": "file",
+          "source": "run.sh",
+          "destination": "/oskari"
         }
   ],
   "post-processors": [

@@ -33,6 +33,11 @@
                 "cd /oskari/oskari-server",
                 "sudo mvn clean install"
             ]
+        },
+        {
+          "type": "file",
+          "source": "run.sh",
+          "destination": "/oskari"
         }
   ],
   "post-processors": [

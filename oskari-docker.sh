@@ -2,7 +2,7 @@
 
 base="ubuntu:latest"
 image="okffi/oskari"
-oskaricmd="/bin/sh -c '/etc/init.d/postgresql start; mvn exec:java -Ddb.username=postgres -Ddb.password=postgres'"
+oskaricmd="run.sh"
 
 # TODO: add persistent data container for postgres separate from the code container http://stackoverflow.com/questions/18496940/how-to-deal-with-persistent-storage-e-g-databases-in-docker
 
@@ -50,7 +50,7 @@ case "$1" in
 		if [ "$2" != "" ]; then
 		    port=$2
 		fi
-		docker run -d -w /oskari/oskari-server/standalone-jetty -p $port:2373 "$image" $oskaricmd
+		docker run -d -w /oskari -p $port:2373 "$image" $oskaricmd
 		rc=$?
 		;;
 	stop)
