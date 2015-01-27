@@ -16,7 +16,7 @@
           "type": "file",
           "source": "run.sh",
           "destination": "/oskari"
-        }.
+        },
         {
             "type": "shell",
             "inline": [
