@@ -26,11 +26,11 @@
                 "sudo -u postgres psql -d oskaridb -a -c 'CREATE EXTENSION postgis;'",
                 "sudo -u postgres psql -c \"ALTER USER postgres WITH PASSWORD 'postgres';\"",
                 "sudo mkdir /oskari",
-                "sudo cd /oskari",
+                "cd /oskari",
                 "sudo git clone https://github.com/nls-oskari/oskari.git",
                 "sudo mv oskari Oskari",
                 "sudo git clone https://github.com/nls-oskari/oskari-server.git",
-                "sudo cd /oskari/oskari-server/standalone-jetty",
+                "cd /oskari/oskari-server/standalone-jetty",
                 "sudo mvn clean install"
             ]
         }
