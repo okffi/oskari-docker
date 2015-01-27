@@ -1,0 +1,46 @@
+{
+  "variables": {
+    "base_image": "ubuntu:latest",
+    "oskari_image": "okffi/oskari"
+  },
+  "builders": [
+    {
+        "type": "docker",
+        "image": "{{user `base_image`}}",
+        "export_path": "/tmp/oskari-docker.tar"
+    }
+  ],
+  "provisioners": [
+        {
+            "type": "shell",
+            "inline": [
+                "sleep 30",
+                "sudo apt-get update",
+                "sudo apt-get install -y git",
+                "sudo apt-get install -y postgresql",
+                "sudo apt-get install -y postgis*",
+                "sudo apt-get install -y maven",
+                "sudo apt-get install -y openjdk-7-jdk",
+                "sudo -u postgres createdb oskaridb",
+                "sudo -u postgres psql -d oskaridb -a -c 'CREATE EXTENSION postgis;'",
+                "sudo -u postgres psql -c \"ALTER USER postgres WITH PASSWORD 'postgres';\""
+                "sudo mkdir /oskari",
+                "sudo cd /oskari",
+                "sudo git clone https://github.com/nls-oskari/oskari.git",
+                "sudo mv oskari Oskari"
+                "sudo git clone https://github.com/nls-oskari/oskari-server.git",
+                "sudo cd /oskari/oskari-server/standalone-jetty",
+                "sudo mvn clean install"
+            ]
+        }
+  ],
+  "post-processors": [
+        [
+            {
+                "type": "docker-import",
+                "repository": "{{user `oskari_image`}}",
+                "tag": "latest"
+            }
+        ]
+    ]
+}
