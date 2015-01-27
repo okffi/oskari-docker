@@ -50,7 +50,7 @@ case "$1" in
 		if [ "$2" != "" ]; then
 		    port=$2
 		fi
-		docker run -d -w /oskari/oskari-server/standalone-jetty -p $port:2373 "$image" $oskaricmd
+		docker run -d -w /oskari/oskari-server/standalone-jetty -p $port:2373 "$image" "$oskaricmd"
 		rc=$?
 		;;
 	stop)
