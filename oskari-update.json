@@ -20,9 +20,11 @@
         {
             "type": "shell",
             "inline": [
+                "cd /oskari",
+                "sudo chmod 755 run.sh",
                 "cd /oskari/oskari-server",
-                "git pull",
-                "mvn clean install"
+                "sudo git pull",
+                "sudo mvn clean install"
             ]
         }
   ],
