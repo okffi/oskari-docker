@@ -38,7 +38,13 @@
           "type": "file",
           "source": "run.sh",
           "destination": "/oskari"
-        }
+        },
+        {
+            "type": "shell",
+            "inline": [
+                "sudo chmod +x /oskari/run.sh"
+            ]
+        },
   ],
   "post-processors": [
         [
