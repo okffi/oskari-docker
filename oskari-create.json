@@ -44,7 +44,7 @@
             "inline": [
                 "sudo chmod 755 /oskari/run.sh"
             ]
-        },
+        }
   ],
   "post-processors": [
         [
